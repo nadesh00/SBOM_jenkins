@@ -5,7 +5,7 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-//   stages {
+  stages {
 //     stage('hello') {
 //       steps {
 //         bat 'echo "Hello World"'
@@ -21,7 +21,7 @@ pipeline {
             //Building the dependencies to generate SBoM
             bat 'npm install'
             bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
+            }
         }
     }
-
 }
