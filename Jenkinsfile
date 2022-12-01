@@ -1,11 +1,10 @@
 pipeline {
-    agent any
-//     {
-//         docker {
-//             image 'node:lts-bullseye-slim'
-//             args '-p 3000:3000'
-//         }
-//     }
+    agent {
+        docker {
+            image 'node:lts-bullseye-slim'
+            args '-p 3000:3000'
+        }
+    }
 //   stages {
 //     stage('hello') {
 //       steps {
@@ -24,5 +23,5 @@ pipeline {
             bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
         }
     }
-  }
+
 }
