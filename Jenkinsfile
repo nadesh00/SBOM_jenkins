@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "node"}
+    tools {nodejs "null"}
 //     {
 //         docker {
 //             image 'node:lts-bullseye-slim'
