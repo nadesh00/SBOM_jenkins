@@ -30,6 +30,7 @@ pipeline {
         steps {
             //Building the dependencies to generate SBoM
             bat './gradlew cyclonedxBom'
+            bat 'echo JENKINS HOME DIRECTORY'
             //bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
             }
         }
