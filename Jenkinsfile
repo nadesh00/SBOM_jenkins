@@ -38,7 +38,7 @@ pipeline {
 
     post {
             always {
-                archiveArtifacts artifacts: 'bom.xml', onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'build/reports/bom.xml', onlyIfSuccessful: true
             }
         }
 }
