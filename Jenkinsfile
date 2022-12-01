@@ -18,19 +18,19 @@ pipeline {
 //             bat 'npm install'
 //             }
 //         }
-    stage('Build') {
-                steps {
-                    nodejs(nodeJSInstallationName: 'Node 6.x', configId: '38807f22-9655-4bdd-afa6-a4a42c938a43') {
-                        bat 'npm config ls'
-                    }
-                }
-            }
+//     stage('Build') {
+//                 steps {
+//                     nodejs(nodeJSInstallationName: 'Node 6.x', configId: '38807f22-9655-4bdd-afa6-a4a42c938a43') {
+//                         bat 'npm config ls'
+//                     }
+//                 }
+//             }
 
     stage ('Generating Software Bill of Materials') {
         steps {
             //Building the dependencies to generate SBoM
-            bat 'npm install'
-            bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
+            bat './gradlew cyclonedxBom'
+            //bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
             }
         }
     }
