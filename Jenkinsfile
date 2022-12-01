@@ -35,6 +35,7 @@ pipeline {
             }
         }
     }
+
     post {
             always {
                 archiveArtifacts artifacts: 'bom.xml', onlyIfSuccessful: true
