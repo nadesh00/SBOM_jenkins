@@ -41,7 +41,7 @@ pipeline {
                 //bat 'go mod init github.com/sakthiuma/SBOM_jenkins'
                 //bat 'go mod tidy'
                 bat 'go get github.com/google/osv-scanner/cmd/osv-scanner'
-                bat 'go run github.com/google/osv-scanner/cmd/osv-scanner --sbom=build/reports/bom.json'
+                bat 'go run github.com/google/osv-scanner/cmd/osv-scanner --json --sbom=build/reports/bom.json'
             }
         }
     }
