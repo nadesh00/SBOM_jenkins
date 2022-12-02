@@ -35,11 +35,17 @@ pipeline {
             //bat 'cyclonedx-bom -o /{JENKINS HOME DIRECTORY}/reports/sbom.xml'
             }
         }
+        stage ('Scanning the sbom') {
+            steps {
+                bat 'go install github.com/google/osv-scanner/cmd/osv-scanner@latest'
+                bat 'go run ./cmd/osv-scanner --sbom=build/reports/bom.json'
+            }
+        }
     }
 
     post {
             always {
-                archiveArtifacts artifacts: 'build/reports/bom.xml', onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'build/reports/bom.json', onlyIfSuccessful: true
             }
         }
 }
