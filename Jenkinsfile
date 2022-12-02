@@ -38,7 +38,7 @@ pipeline {
         stage ('Scanning the sbom') {
             steps {
                 bat 'go install github.com/google/osv-scanner/cmd/osv-scanner@latest'
-                bat 'go mod init'
+                bat 'go mod init github.com/sakthiuma/SBOM_jenkins'
                 bat 'go run ./cmd/osv-scanner --sbom=build/reports/bom.json'
             }
         }
