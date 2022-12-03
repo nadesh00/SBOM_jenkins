@@ -13,7 +13,7 @@ pipeline {
             steps {
                 bat 'go install github.com/google/osv-scanner/cmd/osv-scanner@latest'
                 bat 'go get github.com/google/osv-scanner/cmd/osv-scanner'
-                bat 'go run github.com/google/osv-scanner/cmd/osv-scanner --sbom=build/reports/bom.json'
+                bat 'go run github.com/google/osv-scanner/cmd/osv-scanner --json --sbom=build/reports/bom.json'
             }
         }
     }
