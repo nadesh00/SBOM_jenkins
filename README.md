@@ -1,2 +1,2 @@
 # SBOM_jenkins
-trying to create a jenkins file
+Creating a Jenkins pipeline for automatic SBOM creating and vulnerability scanning
